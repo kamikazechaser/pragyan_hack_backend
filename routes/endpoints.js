@@ -1,5 +1,5 @@
 exports = module.exports = {
-    otherController
+    clientRegistrationController
 }
 
 
@@ -7,13 +7,7 @@ exports = module.exports = {
 const package = require("../package");
 
 
-function otherController(req, res) {
-    res.send({
-        ok: false,
-        status: 404,
-        message: "Path not found",
-        payload: [{
-            info: `${package.name} ${package.version}`
-        }]
-    });
+function clientRegistrationController(req, res) {
+    console.log(req.query);
+    res.status(200);
 }

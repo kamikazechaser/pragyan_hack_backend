@@ -11,7 +11,7 @@ const api = require("./endpoints");
 
 
 // other routes
-router.get("*", api.otherController);
+router.get("/registerclient", api.clientRegistrationController);
 
 
 exports = module.exports = router;
