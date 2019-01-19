@@ -40,6 +40,14 @@ const partnerSchema = new Schema({
     gravatar: {
         type: String,
         required: false,
+    },
+    x_location: {
+        type: NumberLong,
+        required: true,
+    },
+    y_location: {
+        type: NumberLong,
+        required: true,
     }
 });
 
