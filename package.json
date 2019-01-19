@@ -1,0 +1,28 @@
+{
+  "name": "pragyan_hack_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamikazechaser/pragyan_hack_backend.git"
+  },
+  "author": "Mohammed Sohail <sohailsameja@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kamikazechaser/pragyan_hack_backend/issues"
+  },
+  "homepage": "https://github.com/kamikazechaser/pragyan_hack_backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "mongoose": "^5.4.5"
+  }
+}
