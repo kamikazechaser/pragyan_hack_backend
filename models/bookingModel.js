@@ -9,6 +9,10 @@ const bookingSchema = new Schema({
         required: true,
         unique: true,
     },
+    locationName: {
+        type: String,
+        required: true,
+    },
     client: {
         type: String,
         required: true,
@@ -17,7 +21,15 @@ const bookingSchema = new Schema({
         type: Number,
         required: true,
     },
+    price: {
+        type: Number,
+        required: true,
+    },
     date: {
+        type: String,
+        required: true,
+    },
+    time: {
         type: String,
         required: true,
     },    
