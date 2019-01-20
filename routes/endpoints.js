@@ -5,6 +5,7 @@ exports = module.exports = {
     partnerRegistrationController,
     openClientBookingHistoryController,
     addNewPartnerLocationController,
+    guideLocationsController,
 }
 
 const Client = require('../models/clientModel.js')
@@ -103,4 +104,13 @@ function addNewPartnerLocationController(req, res) {
          res.status(200).json({ status: 200, message:"success"});
    }
  });
+}
+
+function guideLocationsController(req, res) {
+    Partner.find({}, { password: 0 }, (error, allPartners) => {
+        if (error) {
+            return console.error(error)
+        }
+        return res.status(200).json(allPartners);
+    })
 }
