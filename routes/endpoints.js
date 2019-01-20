@@ -2,7 +2,9 @@ exports = module.exports = {
     clientRegistrationController,
     clientLoginController,
     partnerLoginController,
-    partnerRegistrationController
+    partnerRegistrationController,
+    openClientBookingHistoryController,
+    addNewPartnerLocationController,
 }
 
 const Client = require('../models/clientModel.js')
@@ -57,7 +59,7 @@ function partnerLoginController(req, res) {
         } else {
             res.status(200).json({ status: 200, message: "Success!" });
         }
-    });   
+    });
 }
 
 function clientLoginController(req, res) {
@@ -69,5 +71,36 @@ function clientLoginController(req, res) {
         } else {
             res.status(200).json({ status: 200, message: "Success!" });
         }
-    });  
+    });
+}
+
+function openClientBookingHistoryController(req, res) {
+    Client.find({ email: req.query.email }, (error, ctx) => {
+      const secureObj = ctx;
+      //secureObj.password = null;
+        if (ctx === null | ctx.length === 0) {
+            res.status(200).json({ status: 404, message: "No transactions yet!" });
+        } else {
+            res.status(200).json({ status: 200, data: secureObj });
+          }
+    });
+}
+
+function addNewPartnerLocationController(req, res) {
+  const {description,cost,x_loc,y_loc,url} = req.query;
+   Partner.findOneAndUpdate({ email: req.query.email }, {
+     $set : {
+       location_description: description,
+       guide_fees: cost,
+       x_location: x_loc,
+       y_location: y_loc,
+       location_cover_image: url
+     }
+   }, (error, ctx ) => {
+     if (ctx === null) {
+         res.status(200).json({ status: 404, message: "No data found!" });
+     } else {
+         res.status(200).json({ status: 200, message:"success"});
+   }
+ });
 }
