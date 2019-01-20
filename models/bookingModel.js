@@ -32,7 +32,7 @@ const bookingSchema = new Schema({
     time: {
         type: String,
         required: true,
-    },    
+    },
     confirmStatus: {
         type: Boolean,
         required: false,
