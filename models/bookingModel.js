@@ -18,7 +18,7 @@ const bookingSchema = new Schema({
         required: true,
     },
     partner: {
-        type: Number,
+        type: String,
         required: true,
     },
     price: {
@@ -35,6 +35,10 @@ const bookingSchema = new Schema({
     },    
     confirmStatus: {
         type: Boolean,
+        required: false,
+    },
+    rating: {
+        type: Number,
         required: false,
     }
 });

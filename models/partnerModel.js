@@ -42,14 +42,32 @@ const partnerSchema = new Schema({
         required: false,
     },
     x_location: {
-        type: NumberLong,
-        required: true,
+        type: String,
+        required: false,
     },
     y_location: {
-        type: NumberLong,
-        required: true,
+        type: String,
+        required: false,
+    },
+    location_cover_image: {
+        type: String,
+        required: false,
+    },
+    location_description: {
+        type: String,
+        required: false,
+    },
+    guide_fees: {
+        type: String,
+        required: false,
+    },
+    is_available: {
+        default: true,
+        type: Boolean,
+        required: false,
     }
 });
 
 const Partner = mongoose.model("Partner", partnerSchema, "partner");
-module.exports = Partner
+
+module.exports = Partner;

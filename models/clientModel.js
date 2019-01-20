@@ -42,12 +42,12 @@ const clientSchema = new Schema({
         required: false,
     },
     x_location: {
-        type: NumberLong,
-        required: true,
+        type: String,
+        required: false,
     },
     y_location: {
-        type: NumberLong,
-        required: true,
+        type: String,
+        required: false,
     }
 });
 
