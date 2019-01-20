@@ -87,7 +87,7 @@ function openClientBookingHistoryController(req, res) {
 }
 
 function addNewPartnerLocationController(req, res) {
-  const {description,cost,x_loc,y_loc,url} = req.query;
+  const {email,x_loc,y_loc,description, cost, url} = req.query;
    Partner.findOneAndUpdate({ email: req.query.email }, {
      $set : {
        location_description: description,
